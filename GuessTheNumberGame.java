@@ -58,6 +58,7 @@ class Umpire
 				if(numFromGuesser==numFromPlayer2 && numFromGuesser==numFromPlayer3)
 				{
 					System.out.println("All players won the game");
+					break;
 				}
 				else if(numFromGuesser==numFromPlayer2)
 				{

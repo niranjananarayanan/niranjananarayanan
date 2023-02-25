@@ -1,0 +1,23 @@
+Purpose
+	To code a console based banking application to perform operations as Login, Check Balance, Deposit, Withdraw and exit using variables, String, Scanner Class, Methods, if..else Statements.. etc.,,.
+
+Basic Structure
+	A Class with main method with variables 
+		double amount=1000;---------------initial deposit amount present in bank
+		final String username = "ram";----username to compare with the input for login
+		final String password= "$ram@98";-password to compare with the input for login
+
+
+Methods to perform different Operations
+
+checkBalance(double amount)
+	To return the amount
+
+boolean login( String username,  String password)
+	To compare the input fields with our username and password and allow to perform other operation
+
+void withdraw(double amount)
+	Withdraw the input amount from our initial amount only if the given input is less than our initial
+
+void deposit(double amount) 
+	Deposit the input amount from user to our initial amount

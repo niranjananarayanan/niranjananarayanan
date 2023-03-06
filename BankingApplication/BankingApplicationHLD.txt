@@ -1,0 +1,10 @@
+PROJECT FLOW
+
+	It is Console based application BankingApplication with final String variables for username and password already given for verification.
+	Also initial deposit is given as double varialble named amount on which the other operation takes place.
+
+On the application execution initially login() executed to get the access of application methods by selection option
+as follows: 1.Check Balance-------checkBalance()
+		2.Deposit-------------deposit()
+		3.Withdraw------------withdraw()
+		4.Exit 

@@ -1,0 +1,21 @@
+PROJECT Details
+
+	It is Console based application
+	A class named BankingApplication with final String variables for username and password already given for verification.
+	Also initial deposit is given as double varialble named amount on which the other operation takes place.
+
+On the application execution initially login() executed to get the access of application methods by selection option
+as follows: 1.Check Balance-------checkBalance()
+		2.Deposit-------------deposit()
+		3.Withdraw------------withdraw()
+		4.Exit 
+
+checkBalance()
+	It returns the value of amount without any modification
+
+deposit()
+	It returns the value of amount by appending or adding the amount given by user
+
+withdraw()
+	It returns the value of amount by subtracting the amount given by user only by checking the user input is less than the amount if 
+not send the user the notification the available amount	

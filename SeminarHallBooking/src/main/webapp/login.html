@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 align="center" style="color: red">Book Your Seminar Hall </h1><br>
+<h2 align="center" style="color: blue">Sign in</h2>
+<form action="./controller/login" method="post">
+
+   <label for="userType">Login as:</label>
+  <select id="userType" name="userType">
+    <option value="admin">Admin</option>
+    <option value="user">User</option>
+  </select>
+  
+  <br><br>
+  <label for="mail">Email:</label>
+  <input type="text" name="mail" placeholder="Enter your mail" required>
+  <br><br>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" placeholder="Enter password" required>
+  <br>
+  <br>
+  <input type="submit" value="Login">
+</form>
+<br>
+<br>
+<p>Don't Have an Account? <a href="userRegister.html">Sign up</a></p>
+</body>
+</html>

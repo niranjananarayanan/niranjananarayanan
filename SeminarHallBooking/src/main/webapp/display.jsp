@@ -49,8 +49,9 @@ if(session.getAttribute("mail")==null)
 	</c:choose>	
 <br/>
 <br/>
-<br/>	
-<p>Logout<a href="logout.html">Log out</a></p>
-<p>Booking Page<a href="/addbooking.jsp">Booking Page</a></p>	
+<br/>
+<p>Booking Page<a href="../addbooking.jsp">Booking Page</a></p>	
+<p>Login<a href="../login.html">Log in</a></p>
+<p>Home Page<a href="../index.html">Home page</a></p>	
 </body>
 </html>

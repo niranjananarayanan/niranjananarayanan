@@ -14,12 +14,12 @@ if(session.getAttribute("mail")==null)
 <body bgcolor="lightyellow">
 <h1 style='color: black; text-align: center;'>VIEW PROFILE</h1></br>
 <h2 style='color: black; text-align: center; font-size:"2"'>PLS PROVIDE DETAILS CORRECTLY AS SPECIFIED</h2>
-<form action="./controller/viewmyprofile">
-<br> <label for="mail"> Mail Id </label> <input type="text"
-			 name="mail" value=" ${mail}" required><br>
+<form action="./controller/viewprofile">
+<br> <label for="id"> Id </label> <input type="number"
+			 name="id" placeholder="Enter College Id"  required><br>
 	     
 <br> 		
-<br>    <input type="submit" value="View Profile">
+<br>    <input type="submit" value="Search Profile">
 </form>
 </body>
 </html>

@@ -1,0 +1,4 @@
+The major goal of the Seminar Hall Booking System is to keep track of all seminar hall booking dates, slot, and availability for all departments. 
+The project is completely restricted at the administrative level, and department members can only access only specific functions. 
+The goal of the project is to create a web app that will reduce manual labor in managing seminar room bookings. 
+Report on the booking, status and history of booking is generated automatically.

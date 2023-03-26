@@ -285,6 +285,8 @@ public class ControllerServlet extends HttpServlet {
 				Status.setBookingId(bookingId);
 				
 				seminarHallBookingService.addStatus(Status);
+				rd = request.getRequestDispatcher("logout.jsp");
+				rd.forward(request, response);
 				System.out.println("From addstatus");
 				
 			}catch(Exception e)
@@ -301,30 +303,6 @@ public class ControllerServlet extends HttpServlet {
 			System.out.println(bookingId);
 			
 			booking = seminarHallBookingService.viewBooking(bookingId);
-
-			Integer bookingId1=booking.getBookingId();
-			System.out.println(bookingId1);
-			
-			Integer hallId=booking.getHallId();
-			System.out.println(hallId);
-			
-			String username=booking.getUsername();
-			System.out.println(username);
-			
-			String userEmail=booking.getUserEmail();
-			System.out.println(userEmail);
-			
-			String department=booking.getDepartment();
-			System.out.println(department);
-			
-			String bookingSlot= booking.getBookingSlot();
-			System.out.println(bookingSlot);
-							
-			Serializable bookingDate=booking.getBookingDate();
-			System.out.println(bookingDate);
-			
-			String purpose=booking.getPurpose();
-			System.out.println(purpose);
 			request.setAttribute("booking", booking);
 
 			rd = request.getRequestDispatcher("../display.jsp");
@@ -332,14 +310,14 @@ public class ControllerServlet extends HttpServlet {
 			System.out.println("forwarded to display.jsp");
 		}
 		
-		if (request.getRequestURI().endsWith("viewmyprofile")) 
+		if (request.getRequestURI().endsWith("viewprofile")) 
 		{
 			user = new Users();
 			
 			Integer id=Integer.parseInt(request.getParameter("id"));
 			System.out.println(id);
 			
-			user = seminarHallBookingService.viewMyProfile(id);
+			user = seminarHallBookingService.viewProfile(id);
 			request.setAttribute("user", user);
 
 			rd = request.getRequestDispatcher("../displayprofile.jsp");
@@ -373,6 +351,21 @@ public class ControllerServlet extends HttpServlet {
 			request.setAttribute("booking", booking);
 
 			rd = request.getRequestDispatcher("../display.jsp");
+			rd.forward(request, response);
+			System.out.println("forwarded to display.jsp");
+		}
+		
+		if (request.getRequestURI().endsWith("viewmyprofile")) 
+		{
+			user = new Users();
+			
+			String mail = request.getParameter("mail");
+			System.out.println(mail);
+			
+			user = seminarHallBookingService.viewMyProfile(mail);
+			request.setAttribute("user", user);
+
+			rd = request.getRequestDispatcher("../displayprofile.jsp");
 			rd.forward(request, response);
 			System.out.println("forwarded to display.jsp");
 		}

@@ -16,11 +16,13 @@ public interface ISeminarHallBookingService
 	
 	public Booking viewBooking(Integer bookingId);
 	
-	public Users viewMyProfile(Integer id);
-	
 	public void addStatus(Status status);
 	
 	public Status viewStatus(String mail);
 
 	public Booking viewMyBookings(String mail);
+
+	public Users viewProfile(Integer id);
+	
+	public Users viewMyProfile(String mail);
 }

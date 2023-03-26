@@ -14,7 +14,7 @@ if(session.getAttribute("mail")==null)
 <body bgcolor="lightyellow">
 <h1 style='color: black; text-align: center;'>CANCEL BOOKING</h1></br>
 <h2 style='color: black; text-align: center; font-size:"2"'>PLS PROVIDE YOUR CORRECT BOOKING ID</h2>
-<form action="./controller/cancelbooking">
+<form action="./controller/cancelbooking" method="post">
 
 <br>    <label for="bookingId">Booking Id:</label>
         <input type="text" name="bookingId" placeholder=yyyymmddhallid1/2><br>

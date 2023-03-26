@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body bgcolor="lightyellow">
+<h1 align="center" style="color: red">Book Your Seminar Hall </h1>
+<h2 align="center" style="color: blue">Fill form with your details properly for Registration</h2>
 <form action="./register" method="post">
 
 <br> <label for="id"> Id </label> <input type="number"

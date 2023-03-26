@@ -1,0 +1,34 @@
+PROJECT DETAILS
+
+	It is Server based application Application with Database to store and retrieve information
+	
+
+The Major Operations of the project
+
+Common for both admin and user
+1.	public String registerUser(Users user);
+	
+2.	public boolean verifyLogin(String mail, String password, String userType);
+	
+3.	public String hallBooking(Booking booking);
+		
+4.	public String cancelBooking(Integer bookingId);
+
+5.	public void addStatus(Status status);
+
+
+For Admin	
+6.	public Booking viewBooking(Integer bookingId);
+	
+7.	public Users viewProfile(Integer id);
+
+
+For users	
+8.	public Status viewStatus(String mail);
+
+9.	public Booking viewMyBookings(String mail);
+
+10.   public Booking viewMyProfile(String mail);
+ 
+
+

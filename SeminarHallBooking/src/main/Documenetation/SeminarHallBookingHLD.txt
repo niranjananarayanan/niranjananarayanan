@@ -1,0 +1,23 @@
+PROJECT FLOW
+
+	It is Server based application Application with Database to store and retrieve information
+	
+
+The project has 4 layers
+ 
+1.Controller - which is the servlet layer that communicates with the server and rest other application codes
+2.Service- the layer which connects the servlet layer and the layer that communicates with Sql Database
+3.DAO/Persistence- the layer communicates with database and have all the JDBC codes
+4.DTO- the layer that has Objects similar to the tables of the database that enables to use the collected data
+or allows to set data for the those objects in the entire java application
+
+Database Information
+
+A database with name seminarhallbooking with five tables have been created
+
+1.adminlogin- with username and password details of individual admin of the department is fixed. 
+              Any addition or edition will be done only by DB Manager.
+2.Userregistration- used for registration and logging in of users with fields(User_id, Username, Department, Batch, Email, Password)
+3.seminarhallbooking-allowed to add or delete by user or admin with fields
+			   (Booking_id, Hall_id, Department, Booking_date, Booking_slot, Username, User_email, Purpose)
+4.status- allowed to view by user and add automatially on addition or cancellation of booking

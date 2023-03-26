@@ -71,13 +71,13 @@ public class SeminarHallBookingServiceImpl implements ISeminarHallBookingService
 	}
 	
 	@Override
-	public Users viewMyProfile(Integer id) 
+	public Users viewProfile(Integer id) 
 	{
 		seminarHallBookingDao= SeminarHallBookingDaoFactory.getSeminarHallBookingDao();
 		System.out.println("From Controller Servelet");
 		
 		if(seminarHallBookingDao!=null)
-			return seminarHallBookingDao.viewMyProfile(id);
+			return seminarHallBookingDao.viewProfile(id);
 		else
 			return null;
 	}
@@ -112,6 +112,18 @@ public class SeminarHallBookingServiceImpl implements ISeminarHallBookingService
 		
 		if(seminarHallBookingDao!=null)
 			return seminarHallBookingDao.viewMyBookings(mail);
+		else
+			return null;
+	}
+
+	@Override
+	public Users viewMyProfile(String mail) 
+	{
+		seminarHallBookingDao= SeminarHallBookingDaoFactory.getSeminarHallBookingDao();
+		System.out.println("From Controller Servelet");
+		
+		if(seminarHallBookingDao!=null)
+			return seminarHallBookingDao.viewMyProfile(mail);
 		else
 			return null;
 	}

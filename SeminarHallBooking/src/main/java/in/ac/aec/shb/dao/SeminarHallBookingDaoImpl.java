@@ -56,6 +56,7 @@ public class SeminarHallBookingDaoImpl implements ISeminarHallBookingDao
 			}
 		} catch (SQLException | IOException e) 
 		{
+			e.printStackTrace();
 			return "Technical Error";
 		} 
 		return "Failed";
@@ -219,11 +220,12 @@ public class SeminarHallBookingDaoImpl implements ISeminarHallBookingDao
 					{
 						if (resultset.next()) 
 						{
+							booking=new Booking();
 							System.out.println("Got Resultset");
 							System.out.println(resultset.getInt(1)+"\t"+resultset.getInt(2)+"\t"+resultset.getString(3)+"\t"+resultset.getDate(4)+"\t"+resultset.getString(5)+"\t"+resultset.getString(6)+"\t"+resultset.getString(7)+"\t"+resultset.getString(8));
+							booking.setDepartment(resultset.getString(3));
 							booking.setBookingId(resultset.getInt(1));
 							booking.setHallId(resultset.getInt(2));
-							booking.setDepartment(resultset.getString(3));
 							booking.setBookingDate(resultset.getDate(4));
 							booking.setBookingSlot(resultset.getString(5));
 							booking.setUsername(resultset.getString(6));
@@ -243,7 +245,7 @@ public class SeminarHallBookingDaoImpl implements ISeminarHallBookingDao
 	}
 
 	@Override
-	public Users viewMyProfile(Integer id) 
+	public Users viewProfile(Integer id) 
 	{
 		String selectQuery = "select  User_id, Username, Department, Batch, Email  from userregistration where User_id=?;";
 		try 
@@ -265,6 +267,7 @@ public class SeminarHallBookingDaoImpl implements ISeminarHallBookingDao
 					{
 						if (resultset.next()) 
 						{
+							user=new Users();
 							System.out.println("Got Resultset");
 							System.out.println(resultset.getInt(1)+"\t"+resultset.getString(2)+"\t"+resultset.getString(3)+"\t"+resultset.getString(4)+"\t"+resultset.getString(5));
 							user.setId(resultset.getInt(1));
@@ -337,6 +340,7 @@ public class SeminarHallBookingDaoImpl implements ISeminarHallBookingDao
 					{
 						if (resultset.next()) 
 						{
+							status=new Status();
 							System.out.println("Got Resultset");
 							System.out.println(resultset.getInt(1)+"\t"+resultset.getString(2)+"\t"+resultset.getString(3));
 							status.setBookingId(resultset.getInt(1));
@@ -377,6 +381,7 @@ public class SeminarHallBookingDaoImpl implements ISeminarHallBookingDao
 					{
 						if (resultset.next()) 
 						{
+							booking=new Booking();
 							System.out.println("Got Resultset");
 							System.out.println(resultset.getInt(1)+"\t"+resultset.getInt(2)+"\t"+resultset.getString(3)+"\t"+resultset.getDate(4)+"\t"+resultset.getString(5)+"\t"+resultset.getString(6)+"\t"+resultset.getString(7)+"\t"+resultset.getString(8));
 							booking.setBookingId(resultset.getInt(1));
@@ -397,5 +402,47 @@ public class SeminarHallBookingDaoImpl implements ISeminarHallBookingDao
 			e.printStackTrace();
 		}
 		return booking;		
+	}
+	
+	public Users viewMyProfile(String mail) 
+	{
+		String selectQuery = "select  User_id, Username, Department, Batch, Email  from userregistration where Email=?;";
+		try 
+		{
+			connection = JdbcUtil.getJdbcConnection();
+			
+			if (connection != null) 
+			{
+				System.out.println("Connection Estableshed");
+				statement = (PreparedStatement) connection.prepareStatement(selectQuery);
+				System.out.println(selectQuery);
+				if (statement != null) 
+				{
+					System.out.println(mail);
+					statement.setString(1, mail);
+					System.out.println("Statement Estableshed");
+					resultset = statement.executeQuery();
+					if(resultset!=null)
+					{
+						if (resultset.next()) 
+						{
+							user=new Users();
+							System.out.println("Got Resultset");
+							System.out.println(resultset.getInt(1)+"\t"+resultset.getString(2)+"\t"+resultset.getString(3)+"\t"+resultset.getString(4)+"\t"+resultset.getString(5));
+							user.setId(resultset.getInt(1));
+							user.setName(resultset.getString(2));
+							user.setDepartment(resultset.getString(3));
+							user.setBatch(resultset.getString(4));
+							user.setEmail(resultset.getString(5));
+							return user;	
+						}
+					}
+				}
+			}
+		}catch(SQLException | IOException e)
+		{
+			e.printStackTrace();
+		}
+		return user;
 	}
 }

@@ -27,7 +27,7 @@ public class JdbcUtil {
 			
 			System.out.println("Connection object initiating");
 			
-			String fileLoc = "H:\\Project\\CollegeSeminarHallBookings\\src\\main\\java\\in\\ac\\aec\\properties\\application.properties";
+			String fileLoc = "H:\\Project\\SeminarHallBooking\\src\\main\\java\\in\\ac\\aec\\properties";
 			FileInputStream fis = new FileInputStream(fileLoc);
 			System.out.println(fileLoc);
 			Properties properties = new Properties();
